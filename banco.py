@@ -21,4 +21,7 @@ class Banco:
     def listar_contas(self):
         print(f"\n-- Contas do {self.nome} --")
         for conta in self.contas:
-            conta.mostrar_saldo()
+            if hasattr(conta, 'mostrar_saldo'):
+                conta.mostrar_saldo()
+            elif hasattr(conta, 'exibir_saldo'):
+                conta.exibir_saldo()
