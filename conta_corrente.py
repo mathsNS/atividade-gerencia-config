@@ -6,19 +6,18 @@ class ContaCorrente:
     def depositar(self, valor):
         if valor > 0:
             self.saldo += valor
-            print(f"Depósito de R${valor:.2f} realizado com sucesso.")
+            return f"Depósito de R${valor:.2f} realizado com sucesso."
         else:
-            print("Valor inválido para depósito.")
+            return "Valor inválido para depósito."
 
     def sacar(self, valor):
         if valor <= 0:
-            print("Valor inválido para saque.")
+            return "Valor inválido para saque."
         elif valor > self.saldo:
-            print("Saldo insuficiente.")
+            return "Saldo insuficiente."
         else:
             self.saldo -= valor
-            print(f"Saque de R${valor:.2f} realizado com sucesso.")
+            return f"Saque de R${valor:.2f} realizado com sucesso."
 
     def exibir_saldo(self):
-        print(f"Titular: {self.titular}")
-        print(f"Saldo atual: R${self.saldo:.2f}")
+        return f"Titular: {self.titular} \nSaldo atual: R${self.saldo:.2f}"

@@ -8,18 +8,18 @@ class ContaPoupanca:
     def depositar(self, valor):
         if valor > 0:
             self.saldo += valor
-            print(f"Depósito de R${valor:.2f} realizado.")
+            return f"Depósito de R${valor:.2f} realizado."
 
     def sacar(self, valor):
         if valor > self.saldo:
-            print("Saldo insuficiente.")
+            return "Saldo insuficiente."
         elif valor > 0:
             self.saldo -= valor
-            print(f"Saque de R${valor:.2f} realizado.")
+            return f"Saque de R${valor:.2f} realizado."
 
     def aplicar_rendimento(self, taxa=0.05):
         self.saldo *= (1 + taxa)
-        print(f"Rendimento de {taxa*100:.0f}% aplicado. Novo saldo: R${self.saldo:.2f}")
+        return f"Rendimento de {taxa*100:.0f}% aplicado. Novo saldo: R${self.saldo:.2f}"
 
     def mostrar_saldo(self):
-        print(f"[Poupança] {self.titular} | Conta: {self.numero_conta} | Saldo: R${self.saldo:.2f}")
+        return f"[Poupança] {self.titular} | Conta: {self.numero_conta} | Saldo: R${self.saldo:.2f}"

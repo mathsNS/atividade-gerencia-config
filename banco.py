@@ -7,16 +7,16 @@ class Banco:
 
     def adicionar_cliente(self, cliente):
         self.clientes.append(cliente)
-        print(f"Cliente '{cliente.nome}' cadastrado.")
+        return f"Cliente '{cliente.nome}' cadastrado."
 
     def adicionar_conta(self, conta):
         self.contas.append(conta)
-        print(f"Conta {conta.numero_conta} adicionada.")
+        return f"Conta {conta.numero_conta} adicionada."
 
     def listar_clientes(self):
         print(f"\n-- Clientes do {self.nome} --")
         for cliente in self.clientes:
-            print(f"  {cliente.nome} | CPF: {cliente.cpf} | Conta: {cliente.numero_conta}")
+            return f"  {cliente.nome} | CPF: {cliente.cpf} | Conta: {cliente.numero_conta}"
 
     def listar_contas(self):
         print(f"\n-- Contas do {self.nome} --")
