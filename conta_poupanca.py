@@ -17,5 +17,9 @@ class ContaPoupanca:
             self.saldo -= valor
             print(f"Saque de R${valor:.2f} realizado.")
 
+    def aplicar_rendimento(self, taxa=0.05):
+        self.saldo *= (1 + taxa)
+        print(f"Rendimento de {taxa*100:.0f}% aplicado. Novo saldo: R${self.saldo:.2f}")
+
     def mostrar_saldo(self):
         print(f"[Poupança] {self.titular} | Conta: {self.numero_conta} | Saldo: R${self.saldo:.2f}")
