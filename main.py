@@ -1,5 +1,20 @@
 import os
 
+from banco import Banco
+from cliente import Cliente
+from conta_corrente import ContaCorrente
+from conta_poupanca import ContaPoupanca
+
+banco = Banco("NexusBank")
+
+
+def encontrar_conta(numero):
+    for conta in banco.contas:
+        if conta.numero_conta == numero:
+            return conta
+    return None
+
+
 while True:
     os.system('cls' if os.name == 'nt' else 'clear')
     print("=== NEXUSBANK ===")
