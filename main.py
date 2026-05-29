@@ -55,6 +55,17 @@ while True:
             print("Conta não encontrada.")
         input("\nPressione Enter para continuar...")
 
+    elif opcao == 3:
+        print("\n-- Sacar --")
+        numero = input("Número da conta: ")
+        conta = encontrar_conta(numero)
+        if conta:
+            valor = float(input("Valor para sacar: R$"))
+            print(conta.sacar(valor))
+        else:
+            print("Conta não encontrada.")
+        input("\nPressione Enter para continuar...")
+
     elif opcao == 5:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Encerrando sistema...")
