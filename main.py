@@ -66,6 +66,19 @@ while True:
             print("Conta não encontrada.")
         input("\nPressione Enter para continuar...")
 
+    elif opcao == 4:
+        print("\n-- Exibir Saldo --")
+        numero = input("Número da conta: ")
+        conta = encontrar_conta(numero)
+        if conta:
+            if hasattr(conta, 'exibir_saldo'):
+                print(conta.exibir_saldo())
+            else:
+                print(conta.mostrar_saldo())
+        else:
+            print("Conta não encontrada.")
+        input("\nPressione Enter para continuar...")
+
     elif opcao == 5:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Encerrando sistema...")
