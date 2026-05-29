@@ -16,12 +16,12 @@ class Banco:
     def listar_clientes(self):
         print(f"\n-- Clientes do {self.nome} --")
         for cliente in self.clientes:
-            return f"  {cliente.nome} | CPF: {cliente.cpf} | Conta: {cliente.numero_conta}"
+            print(f"  {cliente.nome} | CPF: {cliente.cpf} | Conta: {cliente.numero_conta}")
 
     def listar_contas(self):
         print(f"\n-- Contas do {self.nome} --")
         for conta in self.contas:
             if hasattr(conta, 'mostrar_saldo'):
-                conta.mostrar_saldo()
+                print(conta.mostrar_saldo())
             elif hasattr(conta, 'exibir_saldo'):
-                conta.exibir_saldo()
+                print(conta.exibir_saldo())
