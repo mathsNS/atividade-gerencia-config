@@ -44,6 +44,17 @@ while True:
         print(banco.adicionar_conta(conta))
         input("\nPressione Enter para continuar...")
 
+    elif opcao == 2:
+        print("\n-- Depositar --")
+        numero = input("Número da conta: ")
+        conta = encontrar_conta(numero)
+        if conta:
+            valor = float(input("Valor para depositar: R$"))
+            print(conta.depositar(valor))
+        else:
+            print("Conta não encontrada.")
+        input("\nPressione Enter para continuar...")
+
     elif opcao == 5:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Encerrando sistema...")
