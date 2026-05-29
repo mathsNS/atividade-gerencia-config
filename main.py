@@ -26,7 +26,25 @@ while True:
 
     opcao = int(input("Escolha uma opção: "))
 
-    if opcao == 5:
+    if opcao == 1:
+        print("\n-- Criar Conta --")
+        nome = input("Nome do titular: ")
+        cpf = input("CPF: ")
+        numero = input("Número da conta: ")
+        tipo = input("Tipo (1 - Corrente / 2 - Poupança): ")
+
+        cliente = Cliente(nome, cpf, numero)
+        print(banco.adicionar_cliente(cliente))
+
+        if tipo == "1":
+            conta = ContaCorrente(nome, numero)
+        else:
+            conta = ContaPoupanca(nome, numero)
+
+        print(banco.adicionar_conta(conta))
+        input("\nPressione Enter para continuar...")
+
+    elif opcao == 5:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Encerrando sistema...")
         break
